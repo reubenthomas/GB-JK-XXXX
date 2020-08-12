@@ -1,0 +1,24 @@
+> fullFit2 <- coxme(Surv(Time, Censored) ~  (1 | Experiment) +  (1 | Experiment_Image) + (1 | Constructs) + Disease, data = data )
+
+> summary(fullFit2)
+Cox mixed-effects model fit by maximum likelihood
+  Data: data
+  events, n = 1593, 3332
+  Iterations= 11 49 
+                    NULL Integrated    Fitted
+Log-likelihood -12451.68  -12185.25 -12017.28
+
+                   Chisq    df p    AIC     BIC
+Integrated loglik 532.85   4.0 0 524.85  503.36
+ Penalized loglik 868.80 133.1 0 602.61 -112.56
+
+Model:  Surv(Time, Censored) ~ (1 | Experiment) + (1 | Experiment_Image) +      (1 | Constructs) + Disease 
+Fixed coefficients
+              coef exp(coef)  se(coef)     z     p
+Disease -0.3744617 0.6876593 0.1884385 -1.99 0.047
+
+Random effects
+ Group            Variable  Std Dev    Variance  
+ Experiment       Intercept 0.65204075 0.42515714
+ Experiment_Image Intercept 0.37789282 0.14280298
+ Constructs       Intercept 0.27236527 0.07418284
